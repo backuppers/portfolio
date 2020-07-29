@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="./favicon.ico">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- semantic-ui -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+
+    <style>
+        /* pc 화면 스타일 */
+        @media screen and (min-width: 48rem ) {
+            body { height: 100%; } 
+            body > .grid { height: 100%; }
+            h1 { font-size: 4rem; }
+        }
+        .section { display: none; }
+        .label { margin-top: 0.5rem !important; }
+    </style>
+    <script>
+        
+        $(document).ready( init => {
+            var index = 0;
+            $(".section").eq(0).fadeIn();
+            
+            $(".item").click( function() {
+                $(".item").removeClass("active");
+                $(this).addClass("active");
+                $(".section").fadeOut(200);
+                $(".section").eq(index).fadeOut(200, () => {
+                    $(".section").eq($(".item").index(this)).fadeIn(200);
+                    index = $(".item").index(this);
+                })
+                // $(".section").hide();
+                // $(".section").eq($(".item").index(this)).show();
+            })
+        });
+    </script>
+</head>
+<body>
+    <div class="ui stackable middle aligned grid container">
+        <div class="row">
+            <div class="four wide column">
+                <div class="ui secondary vertical massive fluid menu">
+                    <a class="item active" href="#home"><i class="home icon"></i>Home</a>
+                    <a class="item" href="#about"><i class="address card icon"></i>About</a>
+                    <a class="item" href="#skills"><i class="wrench icon"></i>Skills</a>
+                    <a class="item" href="#project"><i class="file icon"></i>Project</a>
+                    <a class="item" href="#contact"><i class="phone icon"></i>Contact</a>
+                </div>
+            </div>
+            <div class="twelve wide column">
+                <div class="ui section center aligned vertical segment">
+                    <h1>
+                        정민재의 포트폴리오 입니다<br>
+                    </h1>
+                </div>
+                <div class="ui section center aligned vertical segment">
+                    TEST2
+                </div>
+                <div class="ui section center aligned vertical segment">
+                    TEST3
+                </div>
+                <div class="ui section center aligned vertical segment">
+                    <h1>PROJECT</h1>
+                    
+                    <div class="ui piled segment">
+                        <div class="ui top left attached label">1차 프로젝트</div>
+                        <div class="ui header vertical segment">
+                            중고거래 게시판
+                            <a href="/test" class="right floated"><i class="github black large icon"></i></a>
+                        </div>
+                        <div class="ui vertical segment">
+                            <p>
+                                개발기간 : 2020. xx. xx ~ 2020. xx. xx <br>
+                                Jsp 기반으로 제작된 중고거래 카드형 게시판 입니다.
+                            </p>
+                            <h3>Tech Stack</h3>
+                            <a class="ui label">Java</a>
+                            <a class="ui label">Tomcat</a>
+                            <a class="ui label">HTML</a>
+                            <a class="ui label">CSS</a>
+                            <a class="ui label">Javascript</a>
+                            <a class="ui label">JSP</a>
+                            <a class="ui label">MySQL</a>
+                            <a class="ui label">jQuery</a>
+                        </div>
+                    </div>
+                    <div class="ui piled segment">
+                        <div class="ui top left attached label">2차 프로젝트</div>
+                        <div class="ui header vertical segment">
+                            포도마켓 (중고거래 게시판 확장)
+                            <a href="/test" class="right floated"><i class="github black large icon"></i></a>
+                        </div>
+                        <div class="ui vertical segment">
+                            <p>
+                                개발기간 : 2020. xx. xx ~ 2020. xx. xx <br>
+                                저를 포함한 3명의 개발자와 개발했고, 팀장을 맡았습니다. <br>
+                                Servlet api를 이용해서 MVC2 모델로 개발하였습니다. <br>
+                                새로운 개발환경에 적응하고자 개인윈도우 운영체제에서 <br>
+                                Linux(Ubuntu) 운영체제로 전환하였습니다. <br>
+                                새로운 DB에 접근하고자 PostgreSQL을 사용하였습니다. <br>
+                                코드형상관리에 Subversion을 사용하였습니다.
+                            </p>
+                            <h3>Tech Stack</h3>
+                            <a class="ui circular label">Java</a>
+                            <a class="ui circular label">Tomcat</a>
+                            <a class="ui circular label">HTML</a>
+                            <a class="ui circular label">CSS</a>
+                            <a class="ui circular label">Javascript</a>
+                            <a class="ui circular label">JSP</a>
+                            <a class="ui circular label">PostgreSQL</a>
+                            <a class="ui circular label">Linux</a>
+                            <a class="ui circular label">SVN</a>
+                        </div>
+                    </div>
+                    <div class="ui piled segment">
+                        <div class="ui top left attached label">3차 프로젝트</div>
+                        <div class="ui header vertical segment">
+                            이지금 (다이어리 웹 서비스)
+                            <a href="/test" class="right floated"><i class="github black large icon"></i></a>
+                        </div>
+                        <div class="ui vertical segment">
+                            <p>
+                                개발기간 : 2020. xx. xx ~ 2020. xx. xx <br>
+                                Spring framework, maven을 활용하여 개발하였습니다. <br>
+                                Spring의 원리를 이해하기 위해 <br>
+                                Eclipse, STS를 사용하지 않고 수동으로 환경을 설정했습니다. <br>
+                                WAS를 TOMCAT에서 jetty로 전환하였습니다. <br>
+                                Google Cloud Platform와 무료 DNS를 연결하여 <br>
+                                호스팅 하였습니다. <br>
+                                코드 형상관리에 Github를 사용하였습니다.
+                            </p>
+                            <h3>Tech Stack</h3>
+                            <a class="ui circular label">Java</a>
+                            <a class="ui circular label">Spring</a>
+                            <a class="ui circular label">Jetty</a>
+                            <a class="ui circular label">HTML</a>
+                            <a class="ui circular label">CSS</a>
+                            <a class="ui circular label">Javascript</a>
+                            <a class="ui circular label">JSP</a>
+                            <a class="ui circular label">MySQL</a>
+                            <a class="ui circular label">GCP</a>
+                            <a class="ui circular label">Github</a>
+                        </div>
+                    </div>
+                    <div class="ui piled segment">
+                        <div class="ui top left attached label">개인 프로젝트</div>
+                        <div class="ui header vertical segment">
+                            그룹톡
+                            <a href="/test" class="right floated"><i class="github black large icon"></i></a>
+                        </div>
+                        <div class="ui vertical segment">
+                            <p>
+                                개발기간 : 2020. xx. xx ~ 2020. xx. xx <br>
+                                코로나 거리두기로 인해 수강중인 학원에서 <br>
+                                수강생들 간의 정보공유가 어려워 익명으로 채팅 할 수 있도록 <br>
+                                제작한 그룹형식의 웹 채팅 서비스 입니다.
+                            </p>
+                            <h3>Tech Stack</h3>
+                            <a class="ui circular label">Javascript</a>
+                            <a class="ui circular label">pug</a>
+                            <a class="ui circular label">Nodejs</a>
+                            <a class="ui circular label">Socket.io</a>
+                            <a class="ui circular label">css</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui section center aligned vertical segment">
+                    <h1>CONTACT</h1>
+                    <div class="ui segment">Email : mj2sdev@gmail.com</div>
+                    <div class="ui segment">Phone : 010 - 1234 - 1234</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
