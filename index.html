@@ -22,6 +22,16 @@
         }
         .section { display: none; }
         .label { margin-top: 0.5rem !important; }
+        .shape {
+            position: absolute;
+            background: #eee;
+            opacity: .5;
+            bottom: 5rem;
+            right: 1rem;
+            border-radius: 100%;
+        }
+        .circle { border-radius: 100%; }
+        .rectangle { border-radius: 10%; width: 10rem; height: 10rem; background: yellow; position: absolute; top: 2rem; left: 5rem;}
     </style>
     <script>
         
@@ -40,7 +50,27 @@
                 // $(".section").hide();
                 // $(".section").eq($(".item").index(this)).show();
             })
+
+            for (var count = 0; count < 5; count++) {
+                var shape = $("<span></span>");
+                var temp = random(10);
+                shape.css("width", temp+'rem');
+                shape.css("height", temp+'rem');
+
+                if (random(2) == 0) { shape.css("bottom", random(10)+'rem'); } 
+                else { shape.css("top", random(10)+'rem'); }
+                if (random(2) ==0) { shape.css("left", random(10)+'rem'); } 
+                else { shape.css("right", random(10)+'rem'); }
+                
+                shape.addClass("shape circle");
+                shape.css("background", "#ddd");
+                $("body").append(shape);
+            }
         });
+        function random(scope) {
+            if (scope < 2) return 0;
+            else return Math.floor(Math.random() * scope);
+        }
     </script>
 </head>
 <body>
@@ -62,7 +92,7 @@
                     </h1>
                 </div>
                 <div class="ui section center aligned vertical segment">
-                    TEST2
+                    <h3>안녕하세요 개발자가</h3>
                 </div>
                 <div class="ui section center aligned vertical segment">
                     TEST3
