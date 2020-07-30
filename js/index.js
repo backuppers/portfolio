@@ -37,7 +37,7 @@ function random(scope) {
 function testxml() {
     var obj;
     $.ajax({
-        url: '/data/projects.json',
+        url: './data/projects.json',
         dataType: 'json',
         method: 'get',
         cache: false,
