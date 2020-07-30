@@ -36,13 +36,15 @@ function random(scope) {
 }
 function testxml() {
     var obj;
-    $.ajax({
-        url: './data/projects.json',
-        dataType: 'json',
-        method: 'get',
-        cache: false,
-        success: function (data) {
-            console.log(data);
-        }
-    });
+    // $.ajax({
+    //     url: './data/projects.json',
+    //     dataType: 'json',
+    //     method: 'get',
+    //     cache: false,
+    //     success: function (data) {
+    //         console.log(data);
+    //     }
+    // });
+    obj = $.getJSON('./data/projects.json');
+    return obj;
 }
