@@ -1,0 +1,26 @@
+/* pc 화면 스타일 */
+@media screen and (min-width: 48rem ) {
+    body { height: 100%; } 
+    body > .grid { height: 100%; }
+    h1 { font-size: 4rem; }
+}
+.section { display: none; }
+.label { margin-top: 0.5rem !important; }
+.shape {
+    position: absolute;
+    background: #eee;
+    opacity: .5;
+    bottom: 5rem;
+    right: 1rem;
+    border-radius: 100%;
+}
+.circle { border-radius: 100%; }
+.rectangle { 
+    border-radius: 10%; 
+    width: 10rem; 
+    height: 10rem; 
+    background: yellow; 
+    position: absolute; 
+    top: 2rem; 
+    left: 5rem;
+}
