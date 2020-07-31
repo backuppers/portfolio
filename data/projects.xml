@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projects>
+    <project>
+        <tag>1차 프로젝트</tag>
+        <title>중고거래 게시판</title>
+        <link>/test</link>
+        <date>
+            <start>2020. 02. 02</start>
+            <end>2020. 02. 20</end>
+        </date>
+        <skills>
+            Java Tomcat HTML CSS Javascript JSP MySQL jQuery
+        </skills>
+    </project>
+</projects>

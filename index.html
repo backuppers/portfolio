@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>정민재의 포트폴리오</title>
     <link rel="shortcut icon" href="./favicon.ico">
 
     <!-- jQuery -->
@@ -13,65 +13,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
 
-    <style>
-        /* pc 화면 스타일 */
-        @media screen and (min-width: 48rem ) {
-            body { height: 100%; } 
-            body > .grid { height: 100%; }
-            h1 { font-size: 4rem; }
-        }
-        .section { display: none; }
-        .label { margin-top: 0.5rem !important; }
-        .shape {
-            position: absolute;
-            background: #eee;
-            opacity: .5;
-            bottom: 5rem;
-            right: 1rem;
-            border-radius: 100%;
-        }
-        .circle { border-radius: 100%; }
-        .rectangle { border-radius: 10%; width: 10rem; height: 10rem; background: yellow; position: absolute; top: 2rem; left: 5rem;}
-    </style>
-    <script>
-        
-        $(document).ready( init => {
-            var index = 0;
-            $(".section").eq(0).fadeIn();
-            
-            $(".item").click( function() {
-                $(".item").removeClass("active");
-                $(this).addClass("active");
-                $(".section").fadeOut(200);
-                $(".section").eq(index).fadeOut(200, () => {
-                    $(".section").eq($(".item").index(this)).fadeIn(200);
-                    index = $(".item").index(this);
-                })
-                // $(".section").hide();
-                // $(".section").eq($(".item").index(this)).show();
-            })
-
-            for (var count = 0; count < 5; count++) {
-                var shape = $("<span></span>");
-                var temp = random(10);
-                shape.css("width", temp+'rem');
-                shape.css("height", temp+'rem');
-
-                if (random(2) == 0) { shape.css("bottom", random(10)+'rem'); } 
-                else { shape.css("top", random(10)+'rem'); }
-                if (random(2) ==0) { shape.css("left", random(10)+'rem'); } 
-                else { shape.css("right", random(10)+'rem'); }
-                
-                shape.addClass("shape circle");
-                shape.css("background", "#ddd");
-                $("body").append(shape);
-            }
-        });
-        function random(scope) {
-            if (scope < 2) return 0;
-            else return Math.floor(Math.random() * scope);
-        }
-    </script>
+    <!-- custom -->
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/index.js"></script>
 </head>
 <body>
     <div class="ui stackable middle aligned grid container">
